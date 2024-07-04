@@ -42,7 +42,7 @@ function Signup() {
                         </label>
                         <input
                             type="email"
-                            placeholder="Enter Name"
+                            placeholder="Enter Email Id"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
@@ -55,7 +55,7 @@ function Signup() {
                         </label>
                         <input
                             type="password"
-                            placeholder="Enter Name"
+                            placeholder="Enter your password"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
