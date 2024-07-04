@@ -21,7 +21,7 @@ function Signup() {
     return (
         <div className="bg-secondary d-flex justify-content-center align-items-center vh-100">
             <div className="bg-light f p-3 rounded w-25">
-                <h2>Register</h2>
+                <h2>NEW USER</h2>
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label htmlFor="email">
