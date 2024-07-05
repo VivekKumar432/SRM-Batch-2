@@ -42,7 +42,7 @@ function Admin() {
                         </label>
                         <input
                             type="email"
-                            placeholder="Enter Name"
+                            placeholder="Enter Email"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
@@ -55,7 +55,7 @@ function Admin() {
                         </label>
                         <input
                             type="password"
-                            placeholder="Enter Name"
+                            placeholder="Enter Password"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
