@@ -45,7 +45,7 @@ function Login() {
                         </label>
                         <input
                             type="password"
-                            placeholder="Enter Name"
+                            placeholder="Enter Email"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
