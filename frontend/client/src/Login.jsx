@@ -9,6 +9,7 @@ function Login() {
     const [password, setPassword] = useState()
     const navigate = useNavigate()
 
+    axios.defaults.withCredentials = true;
     const handleSubmit = (e) => {
         e.preventDefault()
         axios.post('http://localhost:3001/login', {email, password})
@@ -22,7 +23,7 @@ function Login() {
     }
     
     return (
-        <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
+        <div className="d-flex justify-content-center align-items-center bg-dark vh-100">
             <div className="bg-white p-3 rounded w-25">
                 <h2>Login</h2>
                 <form onSubmit={handleSubmit}>
@@ -52,12 +53,12 @@ function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="bg-danger btn btn-success w-100 rounded-7">
+                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-danger text-light">
                         Login
                     </button>
                 </form>
-                <h5>Create new account:</h5>
-                <Link to="/register" className=" btn btn-default border w-100 bg-danger text-light rounded-7 text-decoration-none">
+                <p><strong>Don't have an Account?</strong></p>
+                <Link to="/register" className="btn btn-default border w-100 bg-danger rounded-7 text-decoration-none text-light">
                    Sign Up
                 </Link>
             </div>
