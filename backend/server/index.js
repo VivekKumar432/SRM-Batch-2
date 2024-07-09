@@ -16,6 +16,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 
+
 mongoose.connect("mongodb://localhost:27017/employee");
 
 const verifyUser = (req, res, next) => {
@@ -36,12 +37,9 @@ app.get('/home', verifyUser, (req, res) => {
 
 app.post("/login", (req, res) => {
     const { email, password } = req.body;
-    
-    // Check if either email or password is empty
-    if(!email || !password){
-        return res.json("Email and password fields cannot be empty.");
+    if(!email || !password) {
+        return res.json("Email and password fields can not be empty");
     }
-
     EmployeeModel.findOne({email: email})
         .then(user => {
             if (user) {
@@ -49,7 +47,7 @@ app.post("/login", (req, res) => {
                     if (response) {
                         const token = jwt.sign({email: user.email}, "jwt-secret-key", {expiresIn: "1d"})
                         res.cookie("token", token);
-                        res.json("Success")
+                        res.json({message: "Success", token: token});
                     } else {
                         res.json("the password is incorrect")
                     }
@@ -58,16 +56,12 @@ app.post("/login", (req, res) => {
                 res.json("No record existed")
             }
         })
-        .catch(err =>{
-            res.status(500).json("Internal server error");
-        });
 })
 
 app.post("/admin/login", (req, res) => {
     const { email, password } = req.body;
-
-    if(!email || !password){
-        return res.json("Email and password fields cannot be empty.");
+    if(!email || !password) {
+        return res.json("Email and password fields can not be empty");
     }
     AdminModel.findOne({ email: email })
     .then(user => {
@@ -89,9 +83,8 @@ app.post("/admin/login", (req, res) => {
 
 app.post('/register', (req, res) => {
     const {name, email, password} = req.body;
-
-    if(!email || !password){
-        return res.json("Email and password fields cannot be empty.");
+    if(!email || !password) {
+        return res.json("Email and password fields can not be empty");
     }
     bcrypt.hash(password, 10)
         .then(hash => {
@@ -103,9 +96,8 @@ app.post('/register', (req, res) => {
 
 app.post('/admin', (req, res) => {
     const {name, email, password} = req.body;
-
-    if(!email || !password){
-        return res.json("Email and password fields cannot be empty.");
+    if(!email || !password) {
+        return res.json("Email and password fields can not be empty");
     }
     bcrypt.hash(password, 10)
         .then(hash => {

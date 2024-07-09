@@ -33,7 +33,7 @@ function LAdmin() {
                         </label>
                         <input
                             type="email"
-                            placeholder=""
+                            placeholder="Enter Name"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
@@ -46,19 +46,19 @@ function LAdmin() {
                         </label>
                         <input
                             type="password"
-                            placeholder=""
+                            placeholder="Enter Email"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-secondary">
+                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-danger">
                         Login
                     </button>
                 </form>
-                <p>Don't have an Admin Account?</p>
-                <Link to="/admin" className="btn btn-default border w-100 bg-light rounded-7 text-decoration-none">
+                <p><strong>Don't have an Admin Account?</strong></p>
+                <Link to="/admin" className="btn btn-default border w-100 bg-danger rounded-7 text-decoration-none text-light">
                    Sign Up as Admin
                 </Link>
             </div>
