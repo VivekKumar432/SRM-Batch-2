@@ -1,19 +1,25 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
-  "description": "this is the backend for the ERP system",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VivekKumar432/SRM-Batch-2.git"
-  },
-  "author": "SRM Batch-2",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/VivekKumar432/SRM-Batch-2/issues"
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.4.4",
+    "nodemon": "^3.1.4"
   },
-  "homepage": "https://github.com/VivekKumar432/SRM-Batch-2#readme"
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.7"
+  }
 }
