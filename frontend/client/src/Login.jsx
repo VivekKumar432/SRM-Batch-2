@@ -16,7 +16,7 @@ function Login() {
         .then(result => {
             console.log(result)
             if(result.data === "Success") {
-                navigate('/home')
+                navigate('/dashboard')
             }
         })
         .catch(err => console.log(err))
@@ -33,7 +33,7 @@ function Login() {
                         </label>
                         <input
                             type="email"
-                            placeholder=""
+                            placeholder="Enter Email Id"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
@@ -46,19 +46,19 @@ function Login() {
                         </label>
                         <input
                             type="password"
-                            placeholder=""
+                            placeholder="Enter password"
                             autoCapitalize="off"
                             name="email"
                             className="form-control rounded-7"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-secondary">
+                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-danger text-light">
                         Login
                     </button>
                 </form>
-                <p>Create a new account:</p>
-                <Link to="/register" className="btn btn-default border w-100 bg-light rounded-7 text-decoration-none">
+                <p><strong>Don't have an Account?</strong></p>
+                <Link to="/register" className="btn btn-default border w-100 bg-danger rounded-7 text-decoration-none text-light">
                    Sign Up
                 </Link>
             </div>
