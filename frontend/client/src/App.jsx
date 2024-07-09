@@ -1,12 +1,13 @@
 import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import Signup from './Signup'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Login from './Login'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Home from './Home'
-import Dashboard from './Dashboard'
-import Admin from './Admin'
 import LAdmin from './LAdmin'
+import Admin from './Admin'
+import Dashboard from './Dashboard'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
 
@@ -17,11 +18,11 @@ function App() {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/dashboard' element={<Dashboard />}></Route>
-        <Route path='/admin' element={<Admin />}></Route>
         <Route path='/admin/login' element={<LAdmin />}></Route>
+        <Route path='/admin' element={<Admin />}></Route>
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default App
+export default App;
