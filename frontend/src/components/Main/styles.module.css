@@ -1,0 +1,25 @@
+/*styles.module.css */
+.main_container {
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #58198f;
+    color: rgb(255, 255, 255);
+}
+
+.white_btn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(245, 245, 245);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.white_btn:hover{
+    background-color: #e0a800;
+}
