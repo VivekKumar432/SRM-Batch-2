@@ -1,7 +1,7 @@
 .login_container {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #f5f5f5;
+	background-color: #22a49d;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,7 +22,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: white;
+	background-color: rgb(176, 137, 137);
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -44,7 +44,7 @@
 	width: 370px;
 	padding: 15px;
 	border-radius: 10px;
-	background-color: #edf5f3;
+	background-color: #a4c3bb;
 	margin: 5px 0;
 	font-size: 14px;
 }
@@ -66,14 +66,14 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #7320cc;
+	background-color: #605b66;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
 
 .right h1 {
 	margin-top: 0;
-	color: white;
+	color: rgb(22, 18, 18);
 	font-size: 40px;
 	align-self: center;
 }
@@ -105,7 +105,7 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	background-color: #440e6b;
+	background-color: #754995;
 	color: white;
 	margin: 10px;
 }
@@ -123,7 +123,7 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	background-color: #ffffff;
+	background-color: #b96d6d;
 	color: rgb(0, 0, 0);
 	margin: 10px;
 }
