@@ -1,25 +1,24 @@
-
 .admin_main_container {
-    padding: 20px;
-    text-align: center;
+	text-align: center;
+	padding: 50px;
 }
 
-.admin_nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #58198f;
-    color: rgb(255, 255, 255);
+.admin_nav ul {
+	list-style: none;
+	padding: 0;
 }
 
-.grey_btn {
-    background-color: rgb(0, 0, 0);
-    color: rgb(245, 245, 245);
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+.admin_nav ul li {
+	display: inline;
+	margin: 0 10px;
 }
-.grey_btn:hover{
-	background-color: #e0a800;
+
+.admin_nav ul li a {
+	text-decoration: none;
+	color: #7320cc;
+	font-weight: bold;
+}
+
+.admin_nav ul li a:hover {
+	color: #440e6b;
 }
