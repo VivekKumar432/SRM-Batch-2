@@ -1,68 +1,87 @@
+import React from 'react';
 import { useState } from "react";
+import axios from 'axios';
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
+import './style.css'
+
+
 
 function Login() {
-    const [name, setName] = useState()
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const navigate = useNavigate()
-
-    axios.defaults.withCredentials = true;
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        axios.post('http://localhost:3001/login', {email, password})
-        .then(result => {
-            console.log(result)
-            if(result.data === "Success") {
-                navigate('/dashboard')
-            }
-        })
-        .catch(err => console.log(err))
-    }
     
-    return (
-        <div className="d-flex justify-content-center align-items-center bg-dark vh-100">
-            <div className="bg-white p-3 rounded w-25">
-                <h2>Login</h2>
-                <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="email">
-                            <strong>Email</strong>
-                        </label>
-                        <input
-                            type="email"
-                            placeholder="Enter Email Id"
-                            autoCapitalize="off"
-                            name="email"
-                            className="form-control rounded-7"
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="email">
-                            <strong>Password</strong>
-                        </label>
-                        <input
-                            type="password"
-                            placeholder="Enter password"
-                            autoCapitalize="off"
-                            name="email"
-                            className="form-control rounded-7"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-success w-100 rounded-7 bg-danger text-light">
-                        Login
-                    </button>
+        const [email, setEmail] = useState()
+        const [password, setPassword] = useState()
+        const navigate = useNavigate()
+    
+        axios.defaults.withCredentials = true;
+        const handleSubmit = (e) => {
+            e.preventDefault()
+            axios.post('http://localhost:3001/login',{email, password})
+            .then(result => {console.log(result)
+                if(result.data === "Success") {
+                    navigate('/dashboard')
+                }
+                
+            })
+            
+            .catch(err=> console.log(err))
+        }
+
+        return(
+            <div className='signup template d-flex justify-content-center align-items-center vh-100 bg-primary'>
+            <div className='form_container p-5 rounded bg-white'>
+            <form onSubmit={handleSubmit}>
+            <h3 className='text-center'>User Login</h3>
+                <div className='mb-2'>
+                    <label htmlFor="email-input">
+                        <strong>Email</strong>
+                    </label>
+                    <input
+                        type="email"
+                        id="email-input"
+                        placeholder="Enter Email"
+                        autoComplete='off'
+                        name="email"
+                        className="form-control"
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                </div>
+                <div className='mb-2'>
+                    <label htmlFor="password-input">
+                        <strong>Password</strong>
+                    </label>
+                    <input
+                        type="password"
+                        id="password-input"
+                        placeholder="Enter Password"
+                        name='password'
+                        className="form-control"
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+                </div>
+                <div className='mb-2'>
+                    <input type="checkbox" className="custom-control custom-checkbox" id="check"/>
+                    <label htmlFor="check" className="custom-input-label ms-2">
+                        Remember me
+                    </label>
+                </div>
+                <div className='d-grid'>
+                    <button type="submit" className='btn btn-primary'>Login</button>
+                </div>
                 </form>
-                <p><strong>Don't have an Account?</strong></p>
-                <Link to="/register" className="btn btn-default border w-100 bg-danger rounded-7 text-decoration-none text-light">
-                   Sign Up
+                <p className='mb-2 p-2'>Don't have an user account?</p>
+                <Link to="/register" className='btn btn-default border w-100 bg-light rounded-3'>
+                    Sign Up
                 </Link>
-            </div>
+                <p className='mb-2 p-3 text-center'>-----------or-----------</p>
+                <Link to="/admin/login" className='btn btn-default border w-100 bg-light rounded-3'>
+                    Admin Login/Signup
+                </Link>
+
+
+
         </div>
+    </div>
     )
 }
 
