@@ -2,15 +2,10 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const connection = require("./db");
-const userRoutes = require("./routes/users");
+const connection = require("./config/db");
+const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/auth");
 const adminRoutes = require('./routes/admin');
-
-
-
-
-
 
 // database connection
 connection();
@@ -25,5 +20,5 @@ app.use("/api/auth", authRoutes);
 app.use('/api/admin', adminRoutes);
 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 4545;
 app.listen(port, console.log(`Listening on port ${port}...`));
