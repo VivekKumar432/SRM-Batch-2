@@ -45,8 +45,9 @@ const AdminSignup = () => {
                 </div>
                 <div className={styles.right}>
                     <form className={styles.form_container} onSubmit={handleSubmit}>
+                        <h1>Create Admin </h1>
                        
-                        <h1>Create Admin Account</h1>                 
+                    
                         <input
                             type="email"
                             placeholder="Email"
@@ -67,11 +68,11 @@ const AdminSignup = () => {
                         />
                         
                         {error && <div className={styles.error_msg}>{error}</div>}
-                        <Link to="/admin/Login">
+                        {/* <Link to="/admin/AdminMain"> */}
                         <button type="submit" className={styles.adminButton}>
                             Admin Sign Up
                         </button>
-                        </Link>
+                        {/* </Link> */}
                     </form>
                 </div>
             </div>
