@@ -2,8 +2,9 @@
 const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
+const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
-const {v4:uuidv4} = require('uuid');
+const { v4: uuidv4 } = require("uuid");
 const createUser = async (req, res) => {
   try {
     const validatedData = validate(req.body);
@@ -20,7 +21,6 @@ const createUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
 
     const hashPassword = await bcrypt.hash(validatedData.value.password, salt);
-    
 
     UserModel.create({
       id: uuidv4(),
@@ -49,4 +49,28 @@ const validate = (data) => {
   return schema.validate(data);
 };
 
-module.exports = createUser;
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  if (!email || !password) {
+    return res.json("Email and password fields can not be empty");
+  }
+  UserModel.findOne({ email: email }).then((user) => {
+    if (user) {
+      bcrypt.compare(password, user.password, (err, response) => {
+        if (response) {
+          const token = jwt.sign({ email: user.email }, "jwt-secret-key", {
+            expiresIn: "1d",
+          });
+          res.cookie("token", token);
+          res.status(200).json({ message: "Success", token: token });
+        } else {
+          res.json("the password is incorrect");
+        }
+      });
+    } else {
+      res.json("No record existed");
+    }
+  });
+};
+
+module.exports = { createUser, loginUser };

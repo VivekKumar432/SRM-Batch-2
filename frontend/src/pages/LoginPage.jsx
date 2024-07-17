@@ -4,47 +4,72 @@ import { Link, useNavigate } from "react-router-dom";
 import "../assets/CSS/loginPage.css";
 
 const LoginPage = () => {
-  const [data, setData] = useState({ email: "", password: "" });
-  const [error, setError] = useState("");
   const nav = useNavigate();
-  const handleChange = ({ currentTarget: input }) => {
-    setData({ ...data, [input.name]: input.value });
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleLoginForm = async (val) => {
+    val.preventDefault();
+
     try {
-      const url = "http://localhost:8080/api/auth";
-      console.log(data);
-      const { data: res } = await axios.post(url, data);
-      console.log(res);
-      localStorage.setItem("token", res.data);
-      // window.location.href = "/main";
-      nav("/main");
-    } catch (error) {
-      console.log(error);
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message);
+      const response = await axios.post(
+        "http://localhost:4040/api/users/login-user",
+        {
+          email,
+          password,
+        }
+      );
+      if (response.status === 200) {
+        nav("/main");
       }
+    } catch (error) {
+      setError(error);
+      console.log("Error during login", error);
     }
   };
+
+  // const [data, setData] = useState({ email: "", password: "" });
+  // const [error, setError] = useState("");
+
+  // const handleChange = ({ currentTarget: input }) => {
+  //   setData({ ...data, [input.name]: input.value });
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const url = "http://localhost:4040/api/users/login-user";
+  //     console.log(data);
+  //     const { data: res } = await axios.post(url, data);
+  //     console.log(res);
+  //     localStorage.setItem("token", res.data);
+  //     // window.location.href = "/main";
+  //     nav("/main");
+  //   } catch (error) {
+  //     console.log(error);
+  //     if (
+  //       error.response &&
+  //       error.response.status >= 400 &&
+  //       error.response.status <= 500
+  //     ) {
+  //       setError(error.response.data.message);
+  //     }
+  //   }
+  // };
 
   return (
     <div className="login_container">
       <div className="login_form_container">
         <div className="left">
-          <form className="form_container" onSubmit={handleSubmit}>
+          <form className="form_container" onSubmit={handleLoginForm}>
             <h1>Login to Your Account</h1>
             <input
               type="email"
               placeholder="Email"
               name="email"
-              onChange={handleChange}
-              value={data.email}
+              onChange={(inputEmailVal) => setEmail(inputEmailVal.value)}
+              value={email}
               required
               className="input"
             />
@@ -52,8 +77,8 @@ const LoginPage = () => {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={handleChange}
-              value={data.password}
+              onChange={(inputPassVal) => setPassword(inputPassVal.value)}
+              value={password}
               required
               className="input"
             />
