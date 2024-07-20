@@ -18,6 +18,9 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/admin', adminRoutes);
+app.get('/',(req,res) => {
+    res.send('hello world');
+});
 
 
 const port = process.env.PORT || 4545;

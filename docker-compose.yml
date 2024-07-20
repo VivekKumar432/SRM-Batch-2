@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  backend:
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4040:4040"
+    environment:
+      - NODE_ENV=development
+        DB='mongodb+srv://harshvashishth12:paSSwordh0123@batch-2.6fcoly7.mongodb.net/?retryWrites=true&w=majority&appName=batch-2'
+    volumes:
+      - ./backend:/usr/src/app
+      - /usr/src/app/node_modules
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
