@@ -19,6 +19,10 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use('/api/admin', adminRoutes);
 
+app.get('/',(req,res) => {
+    res.send('Server is running!');
+});
+
 
 const port = process.env.PORT || 4545;
 app.listen(port, console.log(`Listening on port ${port}...`));
