@@ -4,8 +4,7 @@ const app = express();
 const cors = require("cors");
 const connection = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
-const authRoutes = require("./routes/auth");
-const adminRoutes = require("./routes/admin");
+const adminRoutes = require("./routes/adminRoutes");
 
 // database connection
 connection();
@@ -17,7 +16,6 @@ app.use(cors({ origin: true, credentials: true }));
 
 // routes
 app.use("/api/users", userRoutes);
-app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 
 const port = process.env.PORT || 4545;
