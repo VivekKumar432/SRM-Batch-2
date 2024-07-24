@@ -9,7 +9,7 @@ services:
       - "4041:4040"
     environment:
       - NODE_ENV=development
-        MONGO_URI=${MONGO_URI}
+        DB=${MONGO_URI}
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
