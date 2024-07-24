@@ -1,28 +1,28 @@
-const UserModel = require("../models/userModel");
+const AdminModel = require("../models/adminModel");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
 const { v4: uuidv4 } = require("uuid");
 
-const createUser = async (req, res) => {
+const createAdmin = async (req, res) => {
   try {
     const { error, value: validatedData } = validate(req.body);
     if (error) {
       return res.status(400).send({ message: error.details[0].message });
     }
 
-    const user = await UserModel.findOne({ email: validatedData.email });
+    const user = await AdminModel.findOne({ email: validatedData.email });
     if (user) {
       return res
         .status(409)
-        .send({ message: "User with given email already exists!" });
+        .send({ message: "Admin with given email already exists!" });
     }
 
     const salt = await bcrypt.genSalt(10);
     const hashPassword = await bcrypt.hash(validatedData.password, salt);
 
-    await UserModel.create({
+    await AdminModel.create({
       id: uuidv4(),
       firstName: validatedData.firstName,
       lastName: validatedData.lastName,
@@ -30,7 +30,7 @@ const createUser = async (req, res) => {
       password: hashPassword,
     });
 
-    return res.status(201).send({ message: "User created successfully" });
+    return res.status(201).send({ message: "Admin created successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).send({ message: "Internal Server Error" });
@@ -47,7 +47,7 @@ const validate = (data) => {
   return schema.validate(data);
 };
 
-const loginUser = async (req, res) => {
+const loginAdmin = async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {
@@ -56,7 +56,7 @@ const loginUser = async (req, res) => {
         .json({ message: "Email and password fields cannot be empty" });
     }
 
-    const user = await UserModel.findOne({ email });
+    const user = await AdminModel.findOne({ email });
     if (!user) {
       return res.status(404).json({ message: "No record existed" });
     }
@@ -78,4 +78,4 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { createUser, loginUser };
+module.exports = { createAdmin, loginAdmin };
