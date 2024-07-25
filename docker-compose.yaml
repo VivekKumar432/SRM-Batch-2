@@ -9,7 +9,7 @@ services:
       - "4041:4040"
     environment:
       - NODE_ENV=development
-        DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
+        DB='mongodb+srv://anshikakaus:annie1@anshika-batch2.pjzf3d2.mongodb.net/?retryWrites=true&w=majority&appName=Anshika-batch2'
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
