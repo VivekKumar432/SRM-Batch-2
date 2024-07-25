@@ -1,7 +1,3 @@
 node_modules
 Dockerfile
-<<<<<<< HEAD
 .git;
-=======
-.git;
->>>>>>> 496f0738dfe3d122825d16bd9688c42608ccaf70
