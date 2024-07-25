@@ -19,4 +19,8 @@ COPY .env .env
 EXPOSE 4040
 
 # Define the command to run the app
+<<<<<<< HEAD
 CMD ["node", "index.js"]
+=======
+CMD ["node", "index.js"]
+>>>>>>> 496f0738dfe3d122825d16bd9688c42608ccaf70

@@ -7,24 +7,21 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "4041:4040"
+      - "4040:4040"
     environment:
       - NODE_ENV=development
+<<<<<<< HEAD:docker-compose.yaml
          DB='mongodb+srv://radhikasharma52881:radhika777@batch2.4bvdnp5.mongodb.net/?retryWrites=true&w=majority&appName=Batch2'
+=======
+        DB='mongodb+srv://harshvashishth12:passwordh0123@cluster0.u9fcale.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+>>>>>>> 496f0738dfe3d122825d16bd9688c42608ccaf70:docker-compose.yml
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
 
   frontend:
-    image: frontend-image
     build: 
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "5174:5173"
-    environment:
-      - NODE_ENV=development
-    volumes:
-      - ./frontend:/usr/src/app/
-      - /usr/src/app/node_modules
-      
+      - "5173:5173"
