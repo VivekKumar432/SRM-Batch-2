@@ -9,7 +9,7 @@ services:
       - "4041:4040"
     environment:
       - NODE_ENV=development
-        DB='mongodb+srv://radhikasharma52881:radhika777@batch2.4bvdnp5.mongodb.net/?retryWrites=true&w=majority&appName=Batch2'
+        DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
