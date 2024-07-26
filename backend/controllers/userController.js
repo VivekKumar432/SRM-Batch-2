@@ -1,45 +1,43 @@
-// const router = require("express").Router();
 const UserModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const passwordComplexity = require("joi-password-complexity");
 const { v4: uuidv4 } = require("uuid");
+
 const createUser = async (req, res) => {
   try {
-    const validatedData = validate(req.body);
-    // const {firstName, lastName} = validate(req.body);
-    // if (error)
-    //   return res.status(400).send({ message: error.details[0].message });
+    const { error, value: validatedData } = validate(req.body);
+    if (error) {
+      return res.status(400).send({ message: error.details[0].message });
+    }
 
     const user = await UserModel.findOne({ email: validatedData.email });
-    if (user)
+    if (user) {
       return res
         .status(409)
-        .send({ message: "User with given email already Exist!" });
+        .send({ message: "User with given email already exists!" });
+    }
 
     const salt = await bcrypt.genSalt(10);
+    const hashPassword = await bcrypt.hash(validatedData.password, salt);
 
-    const hashPassword = await bcrypt.hash(validatedData.value.password, salt);
-
-    UserModel.create({
+    await UserModel.create({
       id: uuidv4(),
-      firstName: validatedData.value.firstName,
-      lastName: validatedData.value.lastName,
-      email: validatedData.value.email,
+      firstName: validatedData.firstName,
+      lastName: validatedData.lastName,
+      email: validatedData.email,
       password: hashPassword,
     });
 
-    // await new User({ ...req.body, password: hashPassword }).save();
     return res.status(201).send({ message: "User created successfully" });
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: "Internal Server Error" });
+    return res.status(500).send({ message: "Internal Server Error" });
   }
 };
 
 const validate = (data) => {
-  console.log(data);
   const schema = Joi.object({
     firstName: Joi.string().required().label("First Name"),
     lastName: Joi.string().required().label("Last Name"),
@@ -50,27 +48,34 @@ const validate = (data) => {
 };
 
 const loginUser = async (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.json("Email and password fields can not be empty");
-  }
-  UserModel.findOne({ email: email }).then((user) => {
-    if (user) {
-      bcrypt.compare(password, user.password, (err, response) => {
-        if (response) {
-          const token = jwt.sign({ email: user.email }, "jwt-secret-key", {
-            expiresIn: "1d",
-          });
-          res.cookie("token", token);
-          res.status(200).json({ message: "Success", token: token });
-        } else {
-          res.json("the password is incorrect");
-        }
-      });
-    } else {
-      res.json("No record existed");
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res
+        .status(400)
+        .json({ message: "Email and password fields cannot be empty" });
     }
-  });
+
+    const user = await UserModel.findOne({ email });
+    if (!user) {
+      return res.status(404).json({ message: "No record existed" });
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "The password is incorrect" });
+    }
+
+    const token = jwt.sign({ email: user.email }, process.env.JWTPRIVATEKEY, {
+      expiresIn: "1d",
+    });
+
+    await res.cookie("token", token);
+    return res.status(200).json({ message: "Success", token });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: "Internal Server Error" });
+  }
 };
 
 module.exports = { createUser, loginUser };
