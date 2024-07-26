@@ -6,7 +6,11 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "4041:4040"
+
+      - "4040:4040"
+
+      
+
     environment:
       - NODE_ENV=development
         DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
@@ -20,10 +24,17 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - "5174:5173"
+
+      - "5173:5173"
+
+     
+
     environment:
       - NODE_ENV=development
     volumes:
       - ./frontend:/usr/src/app/
+
       - /usr/src/app/node_modules
+
       
+
