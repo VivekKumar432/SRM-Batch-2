@@ -9,14 +9,20 @@ services:
       - "4040:4040"
     environment:
       - NODE_ENV=development
-        DB='mongodb+srv://shakeel:shakeel14@cluster0.hxbqhoi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+        DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
 
   frontend:
+    image: frontend-image
     build: 
       context: ./frontend
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/usr/src/app/
+      - /usr/src/app/node_modules
