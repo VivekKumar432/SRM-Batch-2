@@ -9,7 +9,7 @@ services:
       - "4041:4040"
     environment:
       - NODE_ENV=development
-        DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
+        DB='mongodb+srv://shakeel:shakeel14@cluster0.hxbqhoi.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
