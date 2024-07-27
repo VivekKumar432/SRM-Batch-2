@@ -1,16 +1,21 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "axios"; 
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/CSS/loginPage.css";
-
+ 
 const LoginPage = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLoginForm = async (val) => {
-    val.preventDefault();
+  const handleLoginForm = async (event) => {
+    event.preventDefault();
+
+    if (!email || !password) {
+      setError("Email and password fields cannot be empty");
+      return;
+    }
 
     try {
       const response = await axios.post(
@@ -18,45 +23,30 @@ const LoginPage = () => {
         {
           email,
           password,
-        }
+        },
+        { withCredentials: true, credentials: "include" }
       );
+
       if (response.status === 200) {
-        nav("/main");
+        nav("/main"); // Redirect to main page or dashboard
+      } else {
+        setError("Login failed. Please check your credentials and try again.");
       }
     } catch (error) {
-      setError(error);
+      if (error.response) {
+        setError(
+          error.response.data.message || "Login failed. Please try again."
+        );
+      } else if (error.request) {
+        setError(
+          "No response from server. Please check your network connection."
+        );
+      } else {
+        setError("An unexpected error occurred. Please try again.");
+      }
       console.log("Error during login", error);
     }
   };
-
-  // const [data, setData] = useState({ email: "", password: "" });
-  // const [error, setError] = useState("");
-
-  // const handleChange = ({ currentTarget: input }) => {
-  //   setData({ ...data, [input.name]: input.value });
-  // };
-
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const url = "http://localhost:4040/api/users/login-user";
-  //     console.log(data);
-  //     const { data: res } = await axios.post(url, data);
-  //     console.log(res);
-  //     localStorage.setItem("token", res.data);
-  //     // window.location.href = "/main";
-  //     nav("/main");
-  //   } catch (error) {
-  //     console.log(error);
-  //     if (
-  //       error.response &&
-  //       error.response.status >= 400 &&
-  //       error.response.status <= 500
-  //     ) {
-  //       setError(error.response.data.message);
-  //     }
-  //   }
-  // };
 
   return (
     <div className="login_container">
@@ -68,7 +58,7 @@ const LoginPage = () => {
               type="email"
               placeholder="Email"
               name="email"
-              onChange={(inputEmailVal) => setEmail(inputEmailVal.value)}
+              onChange={(inputEmailVal) => setEmail(inputEmailVal.target.value)}
               value={email}
               required
               className="input"
@@ -77,7 +67,9 @@ const LoginPage = () => {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={(inputPassVal) => setPassword(inputPassVal.value)}
+              onChange={(inputPassVal) =>
+                setPassword(inputPassVal.target.value)
+              }
               value={password}
               required
               className="input"
