@@ -5,7 +5,7 @@ services:
     build:
       context: ./backend
     ports:
-      - "4545:4545"
+      - "4040:4040"
     volumes:
       - ./backend:/app
       - /app/node_modules
