@@ -8,7 +8,9 @@ pipeline {
         frontendImage = 'auth-frontend'
     }
 
-      stage('Load Environment Variables') {
+      
+    stages {
+        stage('Load Environment Variables') {
             steps {
                 script {
                     def envFile = readFile '.env'
@@ -25,7 +27,7 @@ pipeline {
             }
         }
 
-    stages {
+
         stage('Build Backend') {
             steps {
                 script {
