@@ -1,29 +1,23 @@
-version: '3.9'
+version: '3.8'
 
 services:
   backend:
-    build: 
+    build:
       context: ./backend
-      dockerfile: Dockerfile
     ports:
       - "4545:4545"
-    environment:
-      - NODE_ENV=development
-        DB='mongodb+srv://workspraneel:YwGZNiGEH5rTgiXl@supra.uktz3kt.mongodb.net/?retryWrites=true&w=majority&appName=Supra'
     volumes:
-      - ./backend:/usr/src/app
-      - /usr/src/app/node_modules
-
+      - ./backend:/app
+      - /app/node_modules
+    env_file:
+      - ./backend/.env
   frontend:
-    image: frontend-image
-    build: 
+    build:
       context: ./frontend
-      dockerfile: Dockerfile
     ports:
-      - "5174:5173"
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
     environment:
       - NODE_ENV=development
-    volumes:
-      - ./frontend:/usr/src/app/
-      - /usr/src/app/node_modules
-      
