@@ -6,10 +6,10 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "4041:4040"
+      - "4545:4545"
     environment:
       - NODE_ENV=development
-        DB='mongodb+srv://<username>:<password>@<cluster>/<dbname>?retryWrites=true&w=majority&appName=<appname>'
+        DB='mongodb+srv://workspraneel:YwGZNiGEH5rTgiXl@supra.uktz3kt.mongodb.net/?retryWrites=true&w=majority&appName=Supra'
     volumes:
       - ./backend:/usr/src/app
       - /usr/src/app/node_modules
