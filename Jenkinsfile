@@ -8,6 +8,23 @@ pipeline {
         frontendImage = 'auth-frontend'
     }
 
+      stage('Load Environment Variables') {
+            steps {
+                script {
+                    def envFile = readFile '.env'
+                    def lines = envFile.split("\n")
+                    lines.each { line ->
+                        if (line.trim()) {
+                            def parts = line.split("=")
+                            if (parts.length == 2) {
+                                env[parts[0].trim()] = parts[1].trim()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
     stages {
         stage('Build Backend') {
             steps {
