@@ -1,14 +1,4 @@
-// def loadEnvVariables() {
-//     def envFile = readFile ''
-//     envFile.split('\n').each { line ->
-//         if (line.trim()) {
-//             def parts = line.split('=')
-//             def key = parts[0].trim()
-//             def value = parts[1].trim()
-//             env[key] = value
-//         }
-//     }
-// }
+
 
 pipeline {
     agent any
