@@ -5,7 +5,7 @@ pipeline {
 
     environment {
         dockerRegistry = 'https://index.docker.io/v1/'
-        dockerCreds = credentials('dockerhub-credentials')
+        dockerCreds = credentials('Credential')
         backendImage = 'auth-backend'
         frontendImage = 'auth-frontend'
     }
