@@ -64,7 +64,7 @@ pipeline {
         //     }
         // }
 
-        stages {
+        
         stage('Build Backend') {
             steps {
                 sh 'cd backend && docker build -t auth-backend .'
@@ -132,10 +132,10 @@ pipeline {
                 }
             }
         }
+     }
 
 
-
-    }
+    
 
     post {
         always {
@@ -146,4 +146,3 @@ pipeline {
         }
     }
  }
-}
