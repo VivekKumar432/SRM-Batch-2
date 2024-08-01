@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        dockerRegistry = 'https://index.docker.io/v1/'
         dockerCreds = credentials('docker-hub-credentials')
         backendImage = 'auth-backend'
         frontendImage = 'auth-frontend'
