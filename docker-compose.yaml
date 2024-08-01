@@ -26,4 +26,6 @@ services:
     volumes:
       - ./frontend:/usr/src/app/
       - /usr/src/app/node_modules
+
+ 
       
