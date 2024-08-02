@@ -121,7 +121,9 @@ pipeline {
     stages { 
         stage('SCM Checkout') {
             steps{
-             git branch: 'main', url: 'https://github.com/Harpreet1423/Harpreet-Batch-2.git'
+             git branch: 'main',
+                    credentialsId: 'git-hub-credentials',
+                    url: 'https://github.com/Harpreet1423/Harpreet-Batch-2.git'
             }
         }
 
