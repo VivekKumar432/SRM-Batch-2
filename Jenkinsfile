@@ -115,9 +115,9 @@
 
 pipeline {
     agent any 
-    
+
     tools {
-        git 'Default Git'
+        git 'Default'
     }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
