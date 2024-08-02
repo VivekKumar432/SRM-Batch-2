@@ -14,7 +14,7 @@
 //          stage('Check .env File') {
 //             steps {
 //                 script {
-//                     def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//user-auth pipeline//backend//.env'
+//                     def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//pp//backend//.env'
 //                     if (fileExists(envFilePath)) {
 //                         echo "The .env file exists. Reading file..."
 //                     } else {
@@ -115,6 +115,10 @@
 
 pipeline {
     agent any 
+    
+    tools {
+        git 'Default Git'
+    }
     environment {
     DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
     }
