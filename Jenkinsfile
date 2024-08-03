@@ -200,7 +200,7 @@ pipeline {
                 script {
                     echo "Preparing to push backend image"
                     docker.withRegistry(dockerRegistry, 'dockerhub-creds') {
-                        bat "docker push harpreet14/harpreet:${backendImage}"
+                        bat "docker push harpreet${backendImage}:latest"
                     }
                 }
             }
@@ -211,7 +211,7 @@ pipeline {
                 script {
                     echo "Preparing to push frontend image"
                     docker.withRegistry(dockerRegistry, 'dockerhub-creds') {
-                        bat "docker push harpreet14/harpreet:${backendImage}"
+                        bat "docker push harpreet${backendImage}:latest"
                     }
                 }
             }
