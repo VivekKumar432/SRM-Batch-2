@@ -199,7 +199,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push backend image"
-                    docker.withRegistry(dockerRegistry, 'DOCKERHUB_CREDENTIALS') {
+                    docker.withRegistry(dockerRegistry, 'dockerhub-creds') {
                         bat "docker push harpreet/${backendImage}:latest"
                     }
                 }
@@ -210,7 +210,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push frontend image"
-                    docker.withRegistry(dockerRegistry, 'DOCKERHUB_CREDENTIALS') {
+                    docker.withRegistry(dockerRegistry, 'dockerhub-creds') {
                         bat "docker push harpreet/${frontendImage}:latest"
                     }
                 }
