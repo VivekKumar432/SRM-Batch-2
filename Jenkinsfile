@@ -3,8 +3,7 @@ pipeline {
 
     environment {
         dockerRegistry = 'harpreet14'
-        dockerCreds = credentials('dockerhub-creds')
-        backendImage = 'auth-backend'
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
         frontendImage = 'auth-frontend'
     }
 
