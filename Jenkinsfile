@@ -72,7 +72,7 @@ pipeline {
                     if (fileExists(frontendPath)) {
                         echo "Building frontend image"
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}" // Build the image
-                        bat "docker tag ${frontendImage}: shakeel14/fullstack-frontend:fullstack-frontend" // Tag image
+                        bat "docker tag ${frontendImage} shakeel14/fullstack-frontend:fullstack-frontend" // Tag image
                     } else {
                         error "Frontend directory not found"
                     }
