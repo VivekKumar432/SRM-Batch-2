@@ -85,7 +85,7 @@ pipeline {
                 script {
                     echo "Preparing to push backend image"
                     docker.withRegistry(dockerRegistry, "dockerhub-credentials") {
-                        bat "docker push shakeel14/fullstack-backend${backendImage}"
+                        bat "docker push shakeel14/fullstack-backend:${backendImage}"
                     }
                 }
             }
@@ -96,7 +96,7 @@ pipeline {
                 script {
                     echo "Preparing to push frontend image"
                     docker.withRegistry(dockerRegistry, "dockerhub-credentials") {
-                        bat "docker push shakeel14/fullstack-frontend${backendImage}"
+                        bat "docker push shakeel14/fullstack-frontend:${backendImage}"
                     }
                 }
             }
