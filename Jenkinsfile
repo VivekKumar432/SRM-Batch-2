@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     environment {
-        dockerRegistry = 'https://index.docker.io/v1/'
-        dockerCreds = credentials('dockerhub-credentials')
-        backendImage = 'fullstack-backend'
-        frontendImage = 'fullstack-frontend'
+        dockerRegistry='https://index.docker.io/v1/'
+        dockerCreds=credentials('dockerhub-credentials')
+        backendImage='fullstack-backend'
+        frontendImage='fullstack-frontend'
     }
 
       
@@ -109,7 +109,7 @@ pipeline {
         }
         failure {
             echo "PIPELINE FAILED"
-        }
-    }
+            }
+}
 }
  
