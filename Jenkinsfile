@@ -4,8 +4,8 @@ pipeline {
     environment {
         dockerRegistry = 'https://registry.hub.docker.com'
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-creds')
-        frontendImage = 'auth-frontend'
-        backendImage = 'auth-backend'
+        frontendImage = 'fullstack-frontend'
+        backendImage = 'fullstack-backend'
     }
 
     stages {
