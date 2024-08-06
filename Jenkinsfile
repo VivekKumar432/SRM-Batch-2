@@ -53,7 +53,7 @@ pipeline {
                     if (fileExists(backendPath)) {
                         echo "Building backend image"
                         bat "docker build -t ${backendImage}:latest ${backendPath}" // Build the image
-                        bat "docker tag ${backendImage} harpreet14/${backendImage}:fullstack-backend" // Tag image
+                        bat "docker tag ${backendImage} harpreet14/fullstack-backend:fullstack-backend" // Tag image
                     } else {
                         error "Backend directory not found"
                     }
@@ -68,7 +68,7 @@ pipeline {
                     if (fileExists(frontendPath)) {
                         echo "Building frontend image"
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}" // Build the image
-                        bat "docker tag ${frontendImage} harpreet14/${frontendImage}:fullstack-frontend" // Tag image
+                        bat "docker tag ${frontendImage} harpreet14/fullstack-frontend:fullstack-frontend" // Tag image
                     } else {
                         error "Frontend directory not found"
                     }
