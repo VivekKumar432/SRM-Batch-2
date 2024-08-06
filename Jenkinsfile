@@ -4,8 +4,8 @@ pipeline {
     environment {
         dockerRegistry = 'https://index.docker.io/v1/'
         dockerCreds = credentials('dockerhub-credentials')
-        backendImage = 'auth-backend'
-        frontendImage = 'auth-frontend'
+        backendImage = 'fullstack-backend'
+        frontendImage = 'fullstack-frontend'
     }
 
       
@@ -57,7 +57,7 @@ pipeline {
                     if (fileExists(backendPath)) {
                         echo "Building backend image"
                         bat "docker build -t ${backendImage}:latest ${backendPath}" // Build the image
-                        bat "docker tag ${backendImage}:latest thepurpleaxe/${backendImage}:latest" // Tag image
+                        bat "docker tag ${backendImage} palmeghna/fullstack-backend:fullstack-backend" // Tag image
                     } else {
                         error "Backend directory not found"
                     }
@@ -72,7 +72,7 @@ pipeline {
                     if (fileExists(frontendPath)) {
                         echo "Building frontend image"
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}" // Build the image
-                        bat "docker tag ${frontendImage}:latest thepurpleaxe/${frontendImage}:latest" // Tag image
+                        bat "docker tag ${frontendImage} palmeghna/fullstack-frontend:fullstack-frontend" // Tag image
                     } else {
                         error "Frontend directory not found"
                     }
@@ -84,8 +84,8 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push backend image"
-                    docker.withRegistry(dockerRegistry, dockerCreds) {
-                        bat "docker push thepurpleaxe/${backendImage}:latest"
+                    docker.withRegistry(dockerRegistry, "dockerhub-credentials") {
+                        bat "docker push palmeghna/fullstack-backend:${backendImage}"
                     }
                 }
             }
@@ -95,8 +95,8 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push frontend image"
-                    docker.withRegistry(dockerRegistry, dockerCreds) {
-                        bat "docker push thepurpleaxe/${frontendImage}:latest"
+                    docker.withRegistry(dockerRegistry, "dockerhub-credentials") {
+                        bat "docker push palmeghna/fullstack-frontend:${frontendImage}"
                     }
                 }
             }
