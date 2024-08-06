@@ -84,7 +84,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push backend image"
-                    docker.withRegistry(dockerRegistry, "my-credential") {
+                    docker.withRegistry(dockerRegistry, dockerCreds) {
                         bat "docker push harshvashishth12/${backendImage}:latest"
                     }
                 }
@@ -95,7 +95,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push frontend image"
-                    docker.withRegistry(dockerRegistry, "my-credential") {
+                    docker.withRegistry(dockerRegistry, dockerCreds) {
                         bat "docker push harshvashishth12/${frontendImage}:latest"
                     }
                 }
