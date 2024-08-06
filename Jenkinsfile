@@ -1,11 +1,9 @@
-
-
 pipeline {
     agent any
 
     environment {
         dockerRegistry = 'https://index.docker.io/v1/'
-        dockerCreds = credentials('Credential')
+        dockerCreds = credentials('my-credential')
         backendImage = 'auth-backend'
         frontendImage = 'auth-frontend'
     }
