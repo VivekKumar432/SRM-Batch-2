@@ -11,43 +11,43 @@ pipeline {
       
     stages {
 
-         stage('Check .env File') {
-            steps {
-                script {
-                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//erp-mern-app pipeline//backend//.env'
-                    if (fileExists(envFilePath)) {
-                        echo "The .env file exists. Reading file..."
-                    } else {
-                        error "The .env file does not exist at path: ${envFilePath}"
-                    }
-                }
-            }
-        }
-        stage('Load Environment Variables') {
-            steps {
-                script {
-                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//erp-mern-app pipeline//backend//.env'
-                    if (fileExists(envFilePath)) {
-                        def envContent = readFile(envFilePath)
-                        def envVars = envContent.split('\n').collect { line ->
-                            if (line.trim()) {
-                                def parts = line.split('=')
-                                def key = parts[0].trim()
-                                def value = parts[1].trim()
-                                return "${key}=${value}"
-                            }
-                        }.findAll { it != null }
-                        withEnv(envVars) {
-                            // Your steps that require the environment variables
-                            echo "Environment variables loaded: ${envVars}"
-                            // Place your other steps here
-                        }
-                    } else {
-                        error "The .env file does not exist at path: ${envFilePath}"
-                    }
-                }
-            }
-        }
+        //  stage('Check .env File') {
+        //     steps {
+        //         script {
+        //             def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//erp-mern-app pipeline//backend//.env'
+        //             if (fileExists(envFilePath)) {
+        //                 echo "The .env file exists. Reading file..."
+        //             } else {
+        //                 error "The .env file does not exist at path: ${envFilePath}"
+        //             }
+        //         }
+        //     }
+        // }
+        // stage('Load Environment Variables') {
+        //     steps {
+        //         script {
+        //             def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//erp-mern-app pipeline//backend//.env'
+        //             if (fileExists(envFilePath)) {
+        //                 def envContent = readFile(envFilePath)
+        //                 def envVars = envContent.split('\n').collect { line ->
+        //                     if (line.trim()) {
+        //                         def parts = line.split('=')
+        //                         def key = parts[0].trim()
+        //                         def value = parts[1].trim()
+        //                         return "${key}=${value}"
+        //                     }
+        //                 }.findAll { it != null }
+        //                 withEnv(envVars) {
+        //                     // Your steps that require the environment variables
+        //                     echo "Environment variables loaded: ${envVars}"
+        //                     // Place your other steps here
+        //                 }
+        //             } else {
+        //                 error "The .env file does not exist at path: ${envFilePath}"
+        //             }
+        //         }
+        //     }
+        // }
         
 
         stage('Build Backend') {
