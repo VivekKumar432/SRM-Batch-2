@@ -4,8 +4,8 @@ pipeline {
     environment {
         dockerRegistry = 'https://index.docker.io/v1/'
         dockerCreds = credentials('my-credentials')
-        backendImage = 'auth-backend'
-        frontendImage = 'auth-frontend'
+        backendImage = 'fullstack-backend'
+        frontendImage = 'fullstack-frontend'
     }
 
       
@@ -57,7 +57,7 @@ pipeline {
                     if (fileExists(backendPath)) {
                         echo "Building backend image"
                         bat "docker build -t ${backendImage}:latest ${backendPath}" // Build the image
-                        bat "docker tag ${backendImage} harshvashishth12/${backendImage}:auth-backend" // Tag image
+                        bat "docker tag ${backendImage} harshvashishth/${backendImage}:fullstack-backend" // Tag image
                     } else {
                         error "Backend directory not found"
                     }
@@ -72,7 +72,7 @@ pipeline {
                     if (fileExists(frontendPath)) {
                         echo "Building frontend image"
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}" // Build the image
-                        bat "docker tag ${frontendImage} harshvashishth12/${frontendImage}:auth-frontend" // Tag image
+                        bat "docker tag ${frontendImage} harshvashishth/${frontendImage}:fullstack-frontend" // Tag image
                     } else {
                         error "Frontend directory not found"
                     }
@@ -85,7 +85,7 @@ pipeline {
                 script {
                     echo "Preparing to push backend image"
                     docker.withRegistry(dockerRegistry, dockerCreds) {
-                        bat "docker push harshvashishth12/auth-backend:${backendImage}"
+                        bat "docker push harshvashishth/fullstack-backend:${backendImage}"
                     }
                 }
             }
@@ -96,7 +96,7 @@ pipeline {
                 script {
                     echo "Preparing to push frontend image"
                     docker.withRegistry(dockerRegistry, dockerCreds) {
-                        bat "docker push harshvashishth12/auth-frontend:${frontendImage}"
+                        bat "docker push harshvashishth/fullstack-frontend:${frontendImage}"
                     }
                 }
             }
