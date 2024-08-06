@@ -57,7 +57,7 @@ pipeline {
                     if (fileExists(backendPath)) {
                         echo "Building backend image"
                         bat "docker build -t ${backendImage}:latest ${backendPath}" // Build the image
-                        bat "docker tag ${backendImage} harshvashishth/${backendImage}:fullstack-backend" // Tag image
+                        bat "docker tag ${backendImage} harshvashishth/fullstack-backend:fullstack-backend" // Tag image
                     } else {
                         error "Backend directory not found"
                     }
@@ -72,7 +72,7 @@ pipeline {
                     if (fileExists(frontendPath)) {
                         echo "Building frontend image"
                         bat "docker build -t ${frontendImage}:latest ${frontendPath}" // Build the image
-                        bat "docker tag ${frontendImage} harshvashishth/${frontendImage}:fullstack-frontend" // Tag image
+                        bat "docker tag ${frontendImage} harshvashishth/fullstack-frontend:fullstack-frontend" // Tag image
                     } else {
                         error "Frontend directory not found"
                     }
@@ -84,7 +84,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push backend image"
-                    docker.withRegistry(dockerRegistry, dockerCreds) {
+                    docker.withRegistry(dockerRegistry, "my-credential") {
                         bat "docker push harshvashishth/fullstack-backend:${backendImage}"
                     }
                 }
@@ -95,7 +95,7 @@ pipeline {
             steps {
                 script {
                     echo "Preparing to push frontend image"
-                    docker.withRegistry(dockerRegistry, dockerCreds) {
+                    docker.withRegistry(dockerRegistry, "my-credential") {
                         bat "docker push harshvashishth/fullstack-frontend:${frontendImage}"
                     }
                 }
