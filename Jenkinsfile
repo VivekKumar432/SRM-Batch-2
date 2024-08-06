@@ -96,7 +96,7 @@ pipeline {
                 script {
                     echo "Preparing to push frontend image"
                     docker.withRegistry(dockerRegistry, "dockerhub-credentials") {
-                        bat "docker push radhikasharma5047/frontend-frontend:${frontendImage}"
+                        bat "docker push radhikasharma5047/fullstack-frontend:${frontendImage}"
                     }
                 }
             }
