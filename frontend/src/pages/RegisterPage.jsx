@@ -19,7 +19,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4040/api/users/create-user";
+      const url = "http://localhost:4545/api/users/create-user";
       const { data: res } = await axios.post(url, data);
       // window.location.href = "/login";
       nav("/login");
