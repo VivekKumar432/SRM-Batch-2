@@ -1,24 +1,29 @@
 .admin_main_container {
-	text-align: center;
-	padding: 50px;
+    padding: 20px;
+    text-align: center;
 }
 
-.admin_nav ul {
-	list-style: none;
-	padding: 0;
+.admin_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #58198f;
+    color: rgb(255, 255, 255);
+    border-radius: 50px;
 }
 
-.admin_nav ul li {
-	display: inline;
-	margin: 0 10px;
+.grey_btn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(245, 245, 245);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+	font-size: 14px;
+    border-radius: 20px;
 }
 
-.admin_nav ul li a {
-	text-decoration: none;
-	color: #7320cc;
-	font-weight: bold;
-}
-
-.admin_nav ul li a:hover {
-	color: #440e6b;
+.grey_btn:hover {
+	background-color: #e0a800;
 }

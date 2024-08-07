@@ -16,7 +16,7 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const url = "http://localhost:4040/api/admin/login-admin";
+            const url = "http://localhost:4545/api/admin/login-admin";
             const { data: res } = await axios.post(url, data);
             localStorage.setItem("adminToken", res.data);
             window.location.href = "/admin/AdminMain";
