@@ -14,7 +14,7 @@ pipeline {
          stage('Check .env File') {
             steps {
                 script {
-                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//ERP-PROJECT//backend//.env'
+                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//MERN-PROJECT//backend//.env'
                     if (fileExists(envFilePath)) {
                         echo "The .env file exists. Reading file..."
                     } else {
@@ -26,7 +26,7 @@ pipeline {
         stage('Load Environment Variables') {
             steps {
                 script {
-                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//ERP-PROJECT//backend//.env'
+                    def envFilePath = 'C://ProgramData//Jenkins//.jenkins//workspace//MERN-PROJECT//backend//.env'
                     if (fileExists(envFilePath)) {
                         def envContent = readFile(envFilePath)
                         def envVars = envContent.split('\n').collect { line ->
