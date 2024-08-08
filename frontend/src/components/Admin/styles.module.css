@@ -1,7 +1,7 @@
 .signup_container {
     width: 100%;
-    min-height: 100vh;
-    background-color: #a95c5c;
+    height: 98vh;
+    background-color: #5F6F65;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,14 +22,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #7320cc;
+    background-color: #C9DABF;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 .left h1 {
     margin-top: 0;
-    color: white;
+    color: black;
     font-size: 35px;
     align-self: center;
 }
@@ -40,7 +40,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(201, 132, 163);
+    background-color: #808D7C;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -62,7 +62,7 @@
     width: 370px;
     padding: 15px;
     border-radius: 10px;
-    background-color: #edf5f3;
+    background-color: #ffffff;
     margin: 5px 0;
     font-size: 14px;
 }
@@ -98,7 +98,7 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #5F6F65;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
@@ -107,7 +107,7 @@
 }
 
 .purple_btn {
-    background-color: #8763b1;
+    background-color: #5F6F65;
     color: white;
     margin: 10px;
 }
@@ -120,7 +120,8 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #5F6F65;
+    color:white;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;

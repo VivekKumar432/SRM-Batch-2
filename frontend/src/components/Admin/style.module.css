@@ -1,7 +1,7 @@
 .login_container {
 	width: 100%;
-	min-height: 100vh;
-	background-color: #22a49d;
+	height: 98vh;
+	background-color: #5F6F65;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,7 +22,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(176, 137, 137);
+	background-color: #C9DABF;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -44,7 +44,7 @@
 	width: 370px;
 	padding: 15px;
 	border-radius: 10px;
-	background-color: #a4c3bb;
+	background-color: #ffffff;
 	margin: 5px 0;
 	font-size: 14px;
 }
@@ -66,7 +66,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #605b66;
+	background-color: #808D7C;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -105,7 +105,7 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	background-color: #754995;
+	background-color: #5F6F65;
 	color: white;
 	margin: 10px;
 }
