@@ -18,5 +18,9 @@ app.use(cors({ origin: true, credentials: true }));
 app.use("/api/users", userRoutes);
 app.use("/api/admin", adminRoutes);
 
+app.get("/", (req, res) => {
+    res.send("hello, world!");
+  });
+
 const port = process.env.PORT || 4545;
 app.listen(port, console.log(`Listening on port ${port}...`));
