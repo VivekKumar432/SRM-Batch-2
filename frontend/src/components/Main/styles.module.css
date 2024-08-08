@@ -1,7 +1,16 @@
-/*styles.module.css */
 .main_container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     padding: 20px;
     text-align: center;
+    justify-content: space-between;
+    position: relative;
+    background-image: url('https://kpriet.ac.in/asset/frontend/images/student-services/xebia/1.png'); /* Background image URL */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    
 }
 
 .navbar {
@@ -9,9 +18,36 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #58198f;
+    background-color: rgba(88, 25, 143, 0.8); /* Semi-transparent background to allow image visibility */
     color: rgb(255, 255, 255);
     border-radius: 50px;
+    box-shadow: 0 4px 8px #e0a800;
+}
+
+.nav_right {
+    display: flex;
+    align-items: center;
+}
+
+.info_container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 200px; /* Adjust this value based on navbar height */
+    right: 20px;
+    bottom: 230px; /* Adjust this value based on footer height */
+}
+
+.info {
+    background-color: #e0a800; /* Yellow background */
+    color: #fffcfc; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 300px; /* Adjust as needed */
+    box-shadow: 0 4px 8px #58198f; /* Add shadow for better visibility */
+    text-align: justify; /* Optional: Adds shadow for better visibility */
 }
 
 .white_btn {
@@ -21,10 +57,40 @@
     padding: 10px 20px;
     cursor: pointer;
     font-weight: bold;
-	font-size: 14px;
+    font-size: 14px;
     border-radius: 20px;
 }
-.white_btn:hover{
+
+.white_btn:hover {
     background-color: #e0a800;
-    
+}
+
+.clock {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    margin-left: 1rem;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 0.5rem;
+}
+
+.footer {
+    padding: 10px 20px;
+    background-color: rgba(88, 25, 143, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px #e0a800;
+}
+
+.contact_link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.contact_link:hover {
+    text-decoration: underline;
 }

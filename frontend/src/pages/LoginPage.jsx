@@ -58,7 +58,7 @@ const LoginPage = () => {
               type="email"
               placeholder="Email"
               name="email"
-              onChange={(inputEmailVal) => setEmail(inputEmailVal.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               value={email}
               required
               className="input"
@@ -67,23 +67,22 @@ const LoginPage = () => {
               type="password"
               placeholder="Password"
               name="password"
-              onChange={(inputPassVal) =>
-                setPassword(inputPassVal.target.value)
-              }
+              onChange={(e) => setPassword(e.target.value)}
               value={password}
               required
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            {/* <Link to="/Main"> */}
             <button type="submit" className="green_btn">
               Sign In
             </button>
-            {/* </Link> */}
+            <button type="button" className="forgot_btn">
+              Forgot Password
+            </button>
           </form>
         </div>
         <div className="right">
-          <h1>New Here ?</h1>
+          <h1>New Here?</h1>
           <Link to="/signup">
             <button type="button" className="blue_btn">
               Sign Up
