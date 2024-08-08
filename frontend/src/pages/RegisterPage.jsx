@@ -11,7 +11,8 @@ const RegisterPage = () => {
     password: "",
   });
   const [error, setError] = useState("");
-  const nav = useNavigate();
+  const navigate = useNavigate();
+  
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
@@ -21,10 +22,10 @@ const RegisterPage = () => {
     try {
       const url = "http://localhost:4545/api/users/create-user";
       const { data: res } = await axios.post(url, data);
-      // window.location.href = "/login";
-      nav("/login");
-      console.log(res.message);
+      console.log(res.message); // Debugging: Log response message
+      navigate("/login"); // Correct this line
     } catch (error) {
+      console.log(error); // Debugging: Log the error
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -40,10 +41,11 @@ const RegisterPage = () => {
       <div className="signup_form_container">
         <div className="left">
           <h1>Welcome Back</h1>
-          <Link to="/login"></Link>
-          <button type="button" className="white_btn">
-            Sign in
-          </button>
+          <Link to="/login">
+            <button type="button" className="white_btn">
+              Sign in
+            </button>
+          </Link>
         </div>
         <div className="right">
           <form className="form_container" onSubmit={handleSubmit}>

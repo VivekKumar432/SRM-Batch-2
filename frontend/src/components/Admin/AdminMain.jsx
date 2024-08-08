@@ -10,9 +10,9 @@ const AdminMain = () => {
     };
 	return (
 		<div className={styles.admin_main_container}>
-			<h1>Xebia Admin!</h1>
 			<nav className={styles.admin_nav}>
-				<button className={styles.white_btn} onClick={handleLogout}>
+				<h1>Xebia Admin!</h1>
+				<button className={styles.grey_btn} onClick={handleLogout}>
                     Logout
                 </button>
 			</nav>

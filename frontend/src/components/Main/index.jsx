@@ -10,7 +10,7 @@ const Main = () => {
     return (
         <div className={styles.main_container}>
             <nav className={styles.navbar}>
-                <h1>Xebia</h1>
+                <h1> Welcome to Xebia</h1>
                 <button className={styles.white_btn} onClick={handleLogout}>
                     Logout
                 </button>
