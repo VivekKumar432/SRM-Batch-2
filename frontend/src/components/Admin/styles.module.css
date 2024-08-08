@@ -1,7 +1,7 @@
 .signup_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #a95c5c;
+    background-color: #04bd7d;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,8 +12,7 @@
     height: 500px;
     display: flex;
     border-radius: 10px;
-    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-        0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    box-shadow: 13px 13px 5px 0px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
 .left {
@@ -22,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #7320cc;
+    background-color: #2c2f35;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -40,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(201, 132, 163);
+    background-color: #3b3f47;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -52,6 +51,7 @@
 }
 
 .form_container h1 {
+    color:white;
     font-size: 40px;
     margin-top: 0;
 }
@@ -62,7 +62,7 @@
     width: 370px;
     padding: 15px;
     border-radius: 10px;
-    background-color: #edf5f3;
+    background-color: white;
     margin: 5px 0;
     font-size: 14px;
 }
@@ -98,7 +98,8 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #04bd7d;
+    color: white;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
@@ -107,7 +108,7 @@
 }
 
 .purple_btn {
-    background-color: #8763b1;
+    background-color: #04bd7d;
     color: white;
     margin: 10px;
 }
@@ -120,7 +121,8 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #04bd7d;
+    color:white;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
