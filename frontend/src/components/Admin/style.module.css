@@ -1,133 +1,102 @@
+/* Style for the container that holds the video and form */
 .login_container {
-	width: 100%;
-	min-height: 100vh;
-	background-color: #22a49d;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* Style for the video background */
+.bg_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire container */
+    z-index: -1; /* Keeps the video in the background */
+}
+
+/* Style for the form container */
 .login_form_container {
-	width: 900px;
-	height: 500px;
-	display: flex;
-	border-radius: 10px;
-	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    z-index: 1;
+    padding: 0 10%; /* Add padding to prevent the elements from being too close to the edges */
 }
 
+/* Style for the left side containing the form */
 .left {
-	flex: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: rgb(176, 137, 137);
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+    width: 45%;
+	color: aliceblue; /* Increase width for better spacing */
 }
 
+/* Style for the form */
 .form_container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background for better contrast */
+    padding: 30px; /* Increase padding for a more comfortable form layout */
+    border-radius: 15px; /* Increase border-radius for a more modern look */
 }
 
-.form_container h1 {
-	font-size: 40px;
-	margin-top: 0;
-}
-
+/* Style for input fields */
 .input {
-	outline: none;
-	border: none;
-	width: 370px;
-	padding: 15px;
-	border-radius: 10px;
-	background-color: #a4c3bb;
-	margin: 5px 0;
-	font-size: 14px;
+    width: 100%;
+    padding: 12px; /* Slightly increase padding for better user experience */
+    margin: 15px 0; /* Increase margin for better spacing */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px; /* Increase font size for readability */
 }
 
+/* Style for error messages */
 .error_msg {
-	width: 370px;
-	padding: 15px;
-	margin: 5px 0;
-	font-size: 14px;
-	background-color: #f34646;
-	color: white;
-	border-radius: 5px;
-	text-align: center;
+    color: red;
+    margin: 10px 0;
 }
 
-.right {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #605b66;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-}
-
-.right h1 {
-	margin-top: 0;
-	color: rgb(22, 18, 18);
-	font-size: 40px;
-	align-self: center;
-}
-
-.red_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	color: black;
-}
-.red_btn:hover {
-	background-color: #e0a800;
-}
-.blue_btn:hover {
-	background-color: #e0a800;
-}
-
+/* Style for the submit button */
 .green_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #754995;
-	color: white;
-	margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px; /* Increase padding for better clickability */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    width: 100%;
 }
 
-.green_btn:hover {
-	background-color: #e0a800;
+/* Style for the right side with the link to user login */
+.right {
+    width: 45%; /* Increase width for better spacing */
+    display: flex;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px;
+	border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+	color: aliceblue; /* Center the content vertically */
 }
 
-.admin_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #b96d6d;
-	color: rgb(0, 0, 0);
-	margin: 10px;
+/* Style for the "Not an Admin?" text */
+.right h2 {
+    color: rgb(198, 187, 187);
+    margin-bottom: 20px;
+    font-size: 20px;
 }
 
-.admin_btn:hover {
-	background-color: #e0a800;
+/* Style for the link button */
+.red_btn {
+    background-color: #f44336;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
+
