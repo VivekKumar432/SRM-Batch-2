@@ -1,7 +1,7 @@
 .signup_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #70bfab;
+    background-color: #4d0521;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #85729a;
+    background-color: #1b0335;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -99,7 +99,7 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #9f0b41;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
@@ -120,7 +120,7 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #a3cbe6;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
