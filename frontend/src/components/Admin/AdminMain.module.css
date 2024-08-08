@@ -1,6 +1,15 @@
 .admin_main_container {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 10px;
     text-align: center;
+    justify-content: space-between;
+    position: relative;
+    background-image: url('https://careers.recruiteecdn.com/image/upload/q_auto,w_1920,c_limit/production/images/AoG-/w3ccIpMq6vGn.png'); /* Updated Background image URL */
+    background-size:auto; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
 }
 
 .admin_nav {
@@ -8,9 +17,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #58198f;
-    color: rgb(255, 255, 255);
-    border-radius: 50px;
+    background-color: rgba(90, 43, 117, 0.8);
+    color: rgb(17, 10, 10);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px #be43af
 }
 
 .nav_right {
@@ -21,11 +31,11 @@
 .clock {
     font-size: 1.4rem;
     padding: 10px 20px;
-    color: #fff;
+    color: #080505;
     font-weight: bold;
     border-radius: 20px;
     margin-right: 10px;
-    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent background */
+    background-color: rgba(224, 217, 217, 0.2); /* Slightly transparent background */
 }
 
 .grey_btn {
@@ -41,4 +51,13 @@
 
 .grey_btn:hover {
     background-color: #e0a800;
+}
+.footer {
+    padding: 10px 20px;
+    background-color: rgba(55, 174, 188, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px #e0a800;
 }
