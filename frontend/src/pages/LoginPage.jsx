@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios"; 
 import { Link, useNavigate } from "react-router-dom";
 import "../assets/CSS/loginPage.css";
- 
+
 const LoginPage = () => {
   const nav = useNavigate();
   const [email, setEmail] = useState("");
@@ -50,6 +50,10 @@ const LoginPage = () => {
 
   return (
     <div className="login_container">
+      <video autoPlay loop muted playsInline className="bg_video">
+        <source src="https://v1.pinimg.com/videos/mc/720p/49/a9/86/49a9868554765299bf7ba96ce9b8ce75.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="login_form_container">
         <div className="left">
           <form className="form_container" onSubmit={handleLoginForm}>
@@ -75,11 +79,9 @@ const LoginPage = () => {
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            {/* <Link to="/Main"> */}
             <button type="submit" className="green_btn">
               Sign In
             </button>
-            {/* </Link> */}
           </form>
         </div>
         <div className="right">

@@ -12,7 +12,7 @@ const RegisterPage = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  
+
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
@@ -38,11 +38,15 @@ const RegisterPage = () => {
 
   return (
     <div className="signup_container">
+      <video className="bg_video" autoPlay muted loop preload="auto">
+        <source src="https://v1.pinimg.com/videos/mc/720p/49/a9/86/49a9868554765299bf7ba96ce9b8ce75.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="signup_form_container">
         <div className="left">
           <h1>Welcome Back</h1>
           <Link to="/login">
-            <button type="button" className="white_btn">
+            <button type="button" className="blue_btn">
               Sign in
             </button>
           </Link>
@@ -93,7 +97,7 @@ const RegisterPage = () => {
           </form>
           <div className="admin_section">
             <Link to="/admin/signup">
-              <button className="adminButton">Admin Signup</button>
+              <button className="blue_btn">Admin Signup</button>
             </Link>
           </div>
         </div>
