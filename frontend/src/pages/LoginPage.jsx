@@ -76,9 +76,6 @@ const LoginPage = () => {
             <button type="submit" className="green_btn">
               Sign In
             </button>
-            <button type="button" className="forgot_btn">
-              Forgot Password
-            </button>
           </form>
         </div>
         <div className="right">
