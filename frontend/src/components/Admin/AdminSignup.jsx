@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-
 import styles from "./styles.module.css";
 
 const AdminSignup = () => {
@@ -24,7 +23,6 @@ const AdminSignup = () => {
     try {
       const url = "http://localhost:4545/api/admin/create-admin";
       const { data: res } = await axios.post(url, data);
-      //   window.location.href = "/admin/AdminLogin";
       nav("/admin/login");
       console.log(res.message);
     } catch (error) {
@@ -40,11 +38,15 @@ const AdminSignup = () => {
 
   return (
     <div className={styles.signup_container}>
+      <video className={styles.bg_video} autoPlay muted loop preload="auto">
+        <source src="https://v1.pinimg.com/videos/mc/720p/49/a9/86/49a9868554765299bf7ba96ce9b8ce75.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className={styles.signup_form_container}>
         <div className={styles.left}>
           <h1>Welcome Back</h1>
           <Link to="/admin/Login">
-            <button type="button" className={styles.white_btn}>
+            <button type="button" className={styles.pink_btn}>
               Admin Sign in
             </button>
           </Link>
@@ -90,11 +92,9 @@ const AdminSignup = () => {
             />
 
             {error && <div className={styles.error_msg}>{error}</div>}
-            {/* <Link to="/admin/AdminMain"> */}
             <button type="submit" className={styles.adminButton}>
               Admin Sign Up
             </button>
-            {/* </Link> */}
           </form>
         </div>
       </div>

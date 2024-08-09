@@ -79,7 +79,7 @@ const LoginPage = () => {
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="brown_btn">
               Sign In
             </button>
           </form>

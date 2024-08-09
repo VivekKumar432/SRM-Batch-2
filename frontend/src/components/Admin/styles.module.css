@@ -1,12 +1,27 @@
+/* Style for the container that holds the video and form */
 .signup_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #a95c5c;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
+/* Style for the video background */
+.bg_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6); /* Adjust brightness if needed */
+}
+
+/* Style for the form container */
 .signup_form_container {
     width: 900px;
     height: 500px;
@@ -16,57 +31,45 @@
         0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
+/* Style for the left side containing the form */
 .left {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #7320cc;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.left h1 {
-    margin-top: 0;
-    color: white;
-    font-size: 35px;
-    align-self: center;
-}
-
-.right {
     flex: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(201, 132, 163);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    background: linear-gradient(135deg, rgba(88, 220, 165, 0.9), rgba(0, 120, 100, 0.9));
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 20px;
 }
 
+/* Style for the form */
 .form_container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Style for the form heading */
 .form_container h1 {
     font-size: 40px;
     margin-top: 0;
 }
 
+/* Style for input fields */
 .input {
     outline: none;
     border: none;
-    width: 370px;
+    width: 360px;
     padding: 15px;
     border-radius: 10px;
-    background-color: #edf5f3;
+    background-color: #c5dbd5;
     margin: 5px 0;
     font-size: 14px;
 }
 
+/* Style for error messages */
 .error_msg {
     width: 370px;
     padding: 15px;
@@ -78,57 +81,51 @@
     text-align: center;
 }
 
-.white_btn {
-    border: none;
-    outline: none;
-    padding: 12px 0;
-    background-color: #fefefe;
-    color: black;
-    border-radius: 20px;
-    width: 180px;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-}
-.white_btn:hover{
-	background-color: #e0a800;
+/* Style for the right side with the form */
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(159, 136, 183, 0.9), rgba(50, 20, 100, 0.9));
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
 }
 
-.green_btn {
-    border: none;
-    outline: none;
-    padding: 12px 0;
-    background-color: #8763b1;
-    border-radius: 20px;
-    width: 180px;
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.purple_btn {
-    background-color: #8763b1;
-    color: white;
-    margin: 10px;
-}
-
-.green_btn:hover{
-	background-color: #e0a800;
-}
-
+/* Style for the "Admin Sign Up" button */
 .adminButton {
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
+    background-color: #ffffff;
+    color: black;
+    margin-top: 20px;
 }
 
 .adminButton:hover {
+    background-color: #e0a800; /* Set hover color */
+}
+
+.pink_btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+    background-color: #440e6b;
+}
+
+.pink_btn:hover {
     background-color: #e0a800;
 }

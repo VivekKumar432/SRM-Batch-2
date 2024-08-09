@@ -94,7 +94,7 @@
 }
 
 /* Style for the blue button */
-.blue_btn {
+.black_btn {
     border: none;
     outline: none;
     padding: 12px 0;
@@ -103,16 +103,16 @@
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
-    color: black;
-    background-color: white; /* White background for sign in button */
+    color: white;
+    background-color:#440e6b; /* White background for sign in button */
 }
 
-.blue_btn:hover {
+.black_btn:hover {
     background-color: #e0a800; /* Yellow hover effect */
 }
 
 /* Style for the green button (Sign Up button) */
-.green_btn {
+.gray_btn {
     border: none;
     outline: none;
     padding: 12px 0;
@@ -124,6 +124,9 @@
     color: black;
     background-color: white; /* White background for sign up button */
     margin: 10px;
+}
+.gray_btn:hover {
+    background-color: #e0a800;
 }
 
 .green_btn:hover {

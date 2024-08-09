@@ -46,7 +46,7 @@ const RegisterPage = () => {
         <div className="left">
           <h1>Welcome Back</h1>
           <Link to="/login">
-            <button type="button" className="blue_btn">
+            <button type="button" className="black_btn">
               Sign in
             </button>
           </Link>
@@ -91,7 +91,7 @@ const RegisterPage = () => {
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="gray_btn">
               Sign Up
             </button>
           </form>

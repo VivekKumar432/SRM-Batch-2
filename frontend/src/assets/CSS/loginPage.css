@@ -107,7 +107,7 @@
     background-color: #e0a800;
 }
 
-.green_btn {
+.brown_btn {
     border: none;
     outline: none;
     padding: 12px 0;
@@ -116,8 +116,12 @@
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
+    background-color: #440e6b;
+    color: white;
 }
-
+.brown_btn:hover {
+    background-color: #e0a800;
+}
 .admin_btn {
     border: none;
     outline: none;

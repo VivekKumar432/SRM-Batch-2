@@ -29,6 +29,11 @@ const AdminMain = () => {
                     </button>
                 </div>
             </nav>
+            <footer className={styles.footer}>
+                <p>
+                    Contact us: <a href="mailto:dev@xebia.com" className={styles.contact_link}>dev@xebia.com</a> | Phone: (123) 456-7890
+                </p>
+            </footer>
         </div>
     );
 };
