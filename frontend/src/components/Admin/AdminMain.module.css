@@ -5,6 +5,10 @@
     padding: 20px;
     text-align: center;
     justify-content: space-between;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20200804/pngtree-administrator-image_393946.jpg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat;
 }
 
 .admin_nav {

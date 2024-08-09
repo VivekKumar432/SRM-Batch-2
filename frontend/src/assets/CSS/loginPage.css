@@ -1,7 +1,7 @@
 .login_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #a26d6d;
+    background: linear-gradient(135deg, #5800bc, #f1d981, #e0a800);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,8 +12,10 @@
     height: 500px;
     display: flex;
     border-radius: 10px;
-    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-        0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.2),
+        0px 3px 4px 0px rgba(255, 255, 255, 0.14), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    font-weight: bold;    
+    background-color: #ffffff; /* Solid color for the container */
 }
 
 .left {
@@ -22,9 +24,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(88, 220, 165);
+    background-color: rgb(255, 255, 255); /* Solid color for the left side */
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    font-weight: bold;
 }
 
 .form_container {
@@ -66,16 +69,18 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #856d9f;
+    background-color: #440e6b; /* Solid color for the right side */
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    font-weight: bold;
 }
 
 .right h1 {
     margin-top: 0;
-    color: rgb(5, 4, 4);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     align-self: center;
+    font-weight: bold;
 }
 
 .blue_btn {
@@ -88,6 +93,7 @@
     font-size: 14px;
     cursor: pointer;
     color: black; 
+    background-color: #f4f4f4; /* Solid color for the button */
 }
 
 .blue_btn:hover {
@@ -129,4 +135,3 @@
 .admin_btn:hover {
     background-color: #e0a800;
 }
-
