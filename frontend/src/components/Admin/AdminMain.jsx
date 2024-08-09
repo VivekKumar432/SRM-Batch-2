@@ -1,5 +1,9 @@
+// src/components/Admin/AdminMain.jsx
 import React, { useState, useEffect } from "react";
+import ThemeToggle from "../ThemeToggle"; // Adjust path to import ThemeToggle
 import styles from "./AdminMain.module.css";
+import "../../styles/global.css"; // Import global styles
+import "../../styles/themeToggle.css"; // Import optional button styles
 
 const AdminMain = () => {
     const [time, setTime] = useState(new Date());
@@ -21,6 +25,7 @@ const AdminMain = () => {
             <nav className={styles.admin_nav}>
                 <h1>Xebia Admin!</h1>
                 <div className={styles.nav_right}>
+                    <ThemeToggle /> {/* Add the theme toggle button here */}
                     <div className={styles.clock}>
                         {time.toLocaleTimeString()}
                     </div>
