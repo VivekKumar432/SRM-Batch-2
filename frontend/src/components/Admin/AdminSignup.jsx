@@ -22,7 +22,7 @@ const AdminSignup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4040/api/admin/create-admin";
+      const url = "http://localhost:4545/api/admin/create-admin";
       const { data: res } = await axios.post(url, data);
       //   window.location.href = "/admin/AdminLogin";
       nav("/admin/login");

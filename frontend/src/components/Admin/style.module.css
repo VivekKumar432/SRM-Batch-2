@@ -1,133 +1,137 @@
 .login_container {
-	width: 100%;
-	min-height: 100vh;
-	background-color: #22a49d;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login_form_container {
-	width: 900px;
-	height: 500px;
-	display: flex;
-	border-radius: 10px;
-	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    width: 900px;
+    height: 500px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px -2px rgba(255, 255, 255, 0.2),
+        0px 3px 4px 0px rgba(255, 255, 255, 0.14), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    font-weight: bold;    
+    background-color: #ffffff; /* Solid color for the container */
 }
 
 .left {
-	flex: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: rgb(176, 137, 137);
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255); /* Solid color for the left side */
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-weight: bold;
 }
 
 .form_container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form_container h1 {
-	font-size: 40px;
-	margin-top: 0;
+    font-size: 40px;
+    margin-top: 0;
 }
 
 .input {
-	outline: none;
-	border: none;
-	width: 370px;
-	padding: 15px;
-	border-radius: 10px;
-	background-color: #a4c3bb;
-	margin: 5px 0;
-	font-size: 14px;
+    outline: none;
+    border: none;
+    width: 370px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #c5dbd5;
+    margin: 5px 0;
+    font-size: 14px;
 }
 
 .error_msg {
-	width: 370px;
-	padding: 15px;
-	margin: 5px 0;
-	font-size: 14px;
-	background-color: #f34646;
-	color: white;
-	border-radius: 5px;
-	text-align: center;
+    width: 370px;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    background-color: #f34646;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
 }
 
 .right {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #605b66;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #440e6b; /* Solid color for the right side */
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-weight: bold;
 }
 
 .right h1 {
-	margin-top: 0;
-	color: rgb(22, 18, 18);
-	font-size: 40px;
-	align-self: center;
+    margin-top: 0;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    align-self: center;
+    font-weight: bold;
+}
+
+.violet_btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: rgb(255, 255, 255); 
+    background-color: #440e6b; /* Solid color for the button */
+}
+
+.violet_btn:hover {
+    background-color: #e0a800;
 }
 
 .red_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	color: black;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin: 10px;
 }
+
 .red_btn:hover {
-	background-color: #e0a800;
-}
-.blue_btn:hover {
-	background-color: #e0a800;
-}
-
-.green_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #754995;
-	color: white;
-	margin: 10px;
-}
-
-.green_btn:hover {
-	background-color: #e0a800;
+    background-color: #e0a800;
 }
 
 .admin_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #b96d6d;
-	color: rgb(0, 0, 0);
-	margin: 10px;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    margin: 10px;
 }
 
 .admin_btn:hover {
-	background-color: #e0a800;
+    background-color: #e0a800;
 }
