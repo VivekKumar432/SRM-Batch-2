@@ -11,7 +11,8 @@ const RegisterPage = () => {
     password: "",
   });
   const [error, setError] = useState("");
-  const nav = useNavigate();
+  const navigate = useNavigate();
+
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
@@ -19,12 +20,12 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4040/api/users/create-user";
+      const url = "http://localhost:4545/api/users/create-user";
       const { data: res } = await axios.post(url, data);
-      // window.location.href = "/login";
-      nav("/login");
-      console.log(res.message);
+      console.log(res.message); // Debugging: Log response message
+      navigate("/login"); // Correct this line
     } catch (error) {
+      console.log(error); // Debugging: Log the error
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -39,13 +40,6 @@ const RegisterPage = () => {
     <div className="signup_container">
       <div className="signup_form_container">
         <div className="left">
-          <h1>Welcome Back</h1>
-          <Link to="/login"></Link>
-          <button type="button" className="white_btn">
-            Sign in
-          </button>
-        </div>
-        <div className="right">
           <form className="form_container" onSubmit={handleSubmit}>
             <h1>New Account</h1>
             <input
@@ -85,7 +79,7 @@ const RegisterPage = () => {
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="rouge_btn">
               Sign Up
             </button>
           </form>
@@ -94,6 +88,14 @@ const RegisterPage = () => {
               <button className="adminButton">Admin Signup</button>
             </Link>
           </div>
+        </div>
+        <div className="right">
+          <h1>Welcome Back</h1>
+          <Link to="/login">
+            <button type="button" className="rose_btn">
+              Sign in
+            </button>
+          </Link>
         </div>
       </div>
     </div>

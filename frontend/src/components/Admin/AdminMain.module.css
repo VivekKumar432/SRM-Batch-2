@@ -1,24 +1,94 @@
 .admin_main_container {
-	text-align: center;
-	padding: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd_JBDifqiz2I15vBe9fNvmtRsAcN6qclM4A&s'); /* Updated Background image URL */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
 }
 
-.admin_nav ul {
-	list-style: none;
-	padding: 0;
+.admin_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #58198f;
+    color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px #e0a800;
 }
 
-.admin_nav ul li {
-	display: inline;
-	margin: 0 10px;
+.nav_right {
+    display: flex;
+    align-items: center;
 }
 
-.admin_nav ul li a {
-	text-decoration: none;
-	color: #7320cc;
-	font-weight: bold;
+.info_container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 200px; /* Adjust this value based on navbar height */
+    right: 20px;
+    bottom: 50px;
+    margin-top: 2px;
+    margin-bottom: 90px; /* Adjust this value based on footer height */
 }
 
-.admin_nav ul li a:hover {
-	color: #440e6b;
+.info {
+    background-color: #e0a800; /* Yellow background */
+    color: #fffcfc; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 300px; /* Adjust as needed */
+    box-shadow: 0 4px 8px #58198f; /* Add shadow for better visibility */
+    text-align: justify; /* Optional: Adds shadow for better visibility */
+}
+.grey_btn {
+    background-color: #000;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+
+.grey_btn:hover {
+    background-color: #e0a800;
+}
+
+.clock {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    margin-right: 1rem;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+    padding: 10px 0;
+    background-color: #58198f;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px #e0a800;
+}
+
+.contact_link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contact_link:hover {
+    text-decoration: underline;
 }
