@@ -1,7 +1,7 @@
 .signup_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #70bfab;
+    background: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png') center center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +14,7 @@
     border-radius: 10px;
     box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
         0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for better contrast against the background */
 }
 
 .left {
@@ -22,14 +23,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #85729a;
+    background-color: #440e6b;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
 .left h1 {
     margin-top: 0;
-    color: rgb(21, 15, 15);
+    color: white;
     font-size: 35px;
     align-self: center;
 }
@@ -40,7 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(169, 75, 75);
+    background-color: rgb(255, 255, 255);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -78,28 +79,27 @@
     text-align: center;
 }
 
-.white_btn {
+.rouge_btn {
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #fefefe;
-    color: black;
+    background-color: #440e6b;
+    color: white;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
 }
-.white_btn:hover{
+.rouge_btn:hover{
 	background-color: #e0a800;
 }
 
-
-.green_btn {
+.rose_btn {
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: white;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
@@ -112,7 +112,8 @@
     color: white;
     margin: 10px;
 }
-.green_btn:hover{
+
+.rose_btn:hover{
 	background-color: #e0a800;
 }
 
@@ -120,13 +121,14 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #440e6b;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
     margin-top: 10px;
+    color: white;
 }
 
 .adminButton:hover {
