@@ -61,3 +61,28 @@
     text-align: center;
     box-shadow: 0 4px 8px #e0a800;
 }
+.info_container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 200px; /* Adjust this value based on navbar height */
+    right: 20px;
+    bottom: 50px;
+    margin-top: 2px;
+    margin-bottom: 90px; /* Adjust this value based on footer height */
+}
+
+.info {
+    background: linear-gradient(135deg, #aa64d5, #f2a0a4); /* Gradient colors */
+    color: #fffcfc; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 300px; /* Adjust as needed */
+    box-shadow: 0 4px 8px #58198f; /* Add shadow for better visibility */
+    text-align: justify;
+    box-sizing: border-box;
+    line-height: 1;
+    margin: 0; /* Optional: Adds shadow for better visibility */
+}
