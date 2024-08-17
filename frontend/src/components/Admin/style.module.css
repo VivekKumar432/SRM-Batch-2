@@ -1,7 +1,7 @@
 .login_container {
 	width: 100%;
 	min-height: 100vh;
-	background-color: #22a49d;
+	background-color: #D3D9D4;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -22,7 +22,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: rgb(176, 137, 137);
+	background-color: #748D92;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
 }
@@ -66,7 +66,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-color: #605b66;
+	background-color: #297a9a;
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -90,7 +90,7 @@
 	color: black;
 }
 .red_btn:hover {
-	background-color: #e0a800;
+	background-color: #e03100;
 }
 .blue_btn:hover {
 	background-color: #e0a800;
@@ -105,13 +105,13 @@
 	font-weight: bold;
 	font-size: 14px;
 	cursor: pointer;
-	background-color: #754995;
+	background-color: #d1bddf;
 	color: white;
 	margin: 10px;
 }
 
 .green_btn:hover {
-	background-color: #e0a800;
+	background-color: #efe1ba;
 }
 
 .admin_btn {
