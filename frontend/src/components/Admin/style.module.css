@@ -1,133 +1,165 @@
+/* Style for the container that holds the video and form */
 .login_container {
-	width: 100%;
-	min-height: 100vh;
-	background-color: #22a49d;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
+/* Style for the video background */
+.bg_video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.6); /* Adjust brightness if needed */
+}
+
+/* Style for the form container */
 .login_form_container {
-	width: 900px;
-	height: 500px;
-	display: flex;
-	border-radius: 10px;
-	box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
-		0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    width: 900px;
+    height: 500px;
+    display: flex;
+    border-radius: 10px;
+    box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
+        0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
+
+/* Style for the left side containing the form */
 .left {
-	flex: 2;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: rgb(176, 137, 137);
-	border-top-left-radius: 10px;
-	border-bottom-left-radius: 10px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(88, 220, 165, 0.9), rgba(0, 120, 100, 0.9));
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
+/* Style for the form */
 .form_container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form_container h1 {
-	font-size: 40px;
-	margin-top: 0;
+    font-size: 40px;
+    margin-top: 0;
 }
 
+
+
+/* Style for input fields */
 .input {
-	outline: none;
-	border: none;
-	width: 370px;
-	padding: 15px;
-	border-radius: 10px;
-	background-color: #a4c3bb;
-	margin: 5px 0;
-	font-size: 14px;
+    outline: none;
+    border: none;
+    width: 360px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #c5dbd5;
+    margin: 5px 0;
+    font-size: 14px;
 }
 
+/* Style for error messages */
 .error_msg {
-	width: 370px;
-	padding: 15px;
-	margin: 5px 0;
-	font-size: 14px;
-	background-color: #f34646;
-	color: white;
-	border-radius: 5px;
-	text-align: center;
+    width: 370px;
+    padding: 15px;
+    margin: 5px 0;
+    font-size: 14px;
+    background-color: #f34646;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
 }
 
+/* Style for the submit button */
+.green_btn {
+    background-color:#440e6b;
+    color: white;
+    padding: 12px; /* Increase padding for better clickability */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Increase font size */
+    width: 100%;
+}
+
+/* Style for the right side with the link to user login */
 .right {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: #605b66;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(159, 136, 183, 0.9), rgba(50, 20, 100, 0.9));
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-.right h1 {
-	margin-top: 0;
-	color: rgb(22, 18, 18);
-	font-size: 40px;
-	align-self: center;
+/* Style for the "Not an Admin?" text */
+.right h2 {
+    margin-top: 0;
+    color: rgb(5, 4, 4);
+    font-size: 40px;
+    align-self: center;
 }
 
-.red_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	color: black;
+blue_btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    color: black;
 }
-.red_btn:hover {
-	background-color: #e0a800;
-}
+
 .blue_btn:hover {
-	background-color: #e0a800;
+    background-color: #e0a800;
 }
 
 .green_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #754995;
-	color: white;
-	margin: 10px;
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
 }
 
 .green_btn:hover {
-	background-color: #e0a800;
+    background-color: #e0a800;
 }
 
-.admin_btn {
-	border: none;
-	outline: none;
-	padding: 12px 0;
-	border-radius: 20px;
-	width: 180px;
-	font-weight: bold;
-	font-size: 14px;
-	cursor: pointer;
-	background-color: #b96d6d;
-	color: rgb(0, 0, 0);
-	margin: 10px;
+
+
+/* Style for the link button */
+.red_btn {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 180px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.admin_btn:hover {
-	background-color: #e0a800;
+.red_btn:hover {
+    background-color: #e0a800;
 }

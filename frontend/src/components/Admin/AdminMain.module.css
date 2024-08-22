@@ -1,24 +1,88 @@
 .admin_main_container {
-	text-align: center;
-	padding: 50px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 10px;
+    text-align: center;
+    justify-content: space-between;
+    position: relative;
+    background-image: url('https://careers.recruiteecdn.com/image/upload/q_auto,w_1920,c_limit/production/images/AoG-/w3ccIpMq6vGn.png'); /* Updated Background image URL */
+    background-size:auto; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
 }
 
-.admin_nav ul {
-	list-style: none;
-	padding: 0;
+.admin_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(90, 43, 117, 0.8);
+    color: rgb(17, 10, 10);
+    border-radius: 30px;
+    box-shadow: 0 4px 8px #be43af
 }
 
-.admin_nav ul li {
-	display: inline;
-	margin: 0 10px;
+.nav_right {
+    display: flex;
+    align-items: center;
 }
 
-.admin_nav ul li a {
-	text-decoration: none;
-	color: #7320cc;
-	font-weight: bold;
+.clock {
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    color: #080505;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: rgba(224, 217, 217, 0.2); /* Slightly transparent background */
 }
 
-.admin_nav ul li a:hover {
-	color: #440e6b;
+.grey_btn {
+    background-color: rgb(0, 0, 0);
+    color: rgb(245, 245, 245);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+}
+
+.grey_btn:hover {
+    background-color: #e0a800;
+}
+.footer {
+    padding: 10px 20px;
+    background-color: rgba(90, 43, 117, 0.8);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 8px #e0a800;
+}
+.info_container {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 200px; /* Adjust this value based on navbar height */
+    right: 20px;
+    bottom: 50px;
+    margin-top: 2px;
+    margin-bottom: 90px; /* Adjust this value based on footer height */
+}
+
+.info {
+    background: linear-gradient(135deg, #aa64d5, #f2a0a4); /* Gradient colors */
+    color: #fffcfc; /* Light text color for contrast */
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    max-width: 300px; /* Adjust as needed */
+    box-shadow: 0 4px 8px #58198f; /* Add shadow for better visibility */
+    text-align: justify;
+    box-sizing: border-box;
+    line-height: 1;
+    margin: 0; /* Optional: Adds shadow for better visibility */
 }

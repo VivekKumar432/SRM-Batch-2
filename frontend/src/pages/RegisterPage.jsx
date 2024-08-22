@@ -11,7 +11,8 @@ const RegisterPage = () => {
     password: "",
   });
   const [error, setError] = useState("");
-  const nav = useNavigate();
+  const navigate = useNavigate();
+
   const handleChange = ({ currentTarget: input }) => {
     setData({ ...data, [input.name]: input.value });
   };
@@ -19,12 +20,12 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = "http://localhost:4040/api/users/create-user";
+      const url = "http://localhost:4545/api/users/create-user";
       const { data: res } = await axios.post(url, data);
-      // window.location.href = "/login";
-      nav("/login");
-      console.log(res.message);
+      console.log(res.message); // Debugging: Log response message
+      navigate("/login"); // Correct this line
     } catch (error) {
+      console.log(error); // Debugging: Log the error
       if (
         error.response &&
         error.response.status >= 400 &&
@@ -37,13 +38,18 @@ const RegisterPage = () => {
 
   return (
     <div className="signup_container">
+      <video className="bg_video" autoPlay muted loop preload="auto">
+        <source src="https://v1.pinimg.com/videos/mc/720p/49/a9/86/49a9868554765299bf7ba96ce9b8ce75.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="signup_form_container">
         <div className="left">
           <h1>Welcome Back</h1>
-          <Link to="/login"></Link>
-          <button type="button" className="white_btn">
-            Sign in
-          </button>
+          <Link to="/login">
+            <button type="button" className="black_btn">
+              Sign in
+            </button>
+          </Link>
         </div>
         <div className="right">
           <form className="form_container" onSubmit={handleSubmit}>
@@ -85,13 +91,13 @@ const RegisterPage = () => {
               className="input"
             />
             {error && <div className="error_msg">{error}</div>}
-            <button type="submit" className="green_btn">
+            <button type="submit" className="gray_btn">
               Sign Up
             </button>
           </form>
           <div className="admin_section">
             <Link to="/admin/signup">
-              <button className="adminButton">Admin Signup</button>
+              <button className="blue_btn">Admin Signup</button>
             </Link>
           </div>
         </div>

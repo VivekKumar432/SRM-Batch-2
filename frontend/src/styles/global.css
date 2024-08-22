@@ -1,0 +1,19 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #000000;
+  /* Add more variables for other elements if needed */
+}
+
+[data-theme="dark"] {
+  --background-color: #1a1a1a;
+  --text-color: #ffffff;
+  /* Add more variables for dark mode */
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Global styles for other components */
