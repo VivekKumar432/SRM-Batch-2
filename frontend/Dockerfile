@@ -16,5 +16,4 @@ COPY . .
 # Expose the port Vite runs on
 EXPOSE 5173
 
-# Command to run the Vite development server
 CMD ["npm","run","dev"]
