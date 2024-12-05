@@ -1,7 +1,7 @@
 .signup_container {
     width: 100%;
     min-height: 100vh;
-    background-color: #a95c5c;
+    background: url('https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png') center center / cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,6 +14,7 @@
     border-radius: 10px;
     box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),
         0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency for better contrast against the background */
 }
 
 .left {
@@ -22,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #7320cc;
+    background-color: #440e6b;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
@@ -40,7 +41,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgb(201, 132, 163);
+    background-color: rgb(255, 255, 255);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
@@ -120,13 +121,14 @@
     border: none;
     outline: none;
     padding: 12px 0;
-    background-color: #8763b1;
+    background-color: #440e6b;
     border-radius: 20px;
     width: 180px;
     font-weight: bold;
     font-size: 14px;
     cursor: pointer;
     margin-top: 10px;
+    color: white;
 }
 
 .adminButton:hover {
